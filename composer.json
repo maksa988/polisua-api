@@ -1,0 +1,31 @@
+{
+  "name": "maksa988/polisua-api",
+  "description": "PHP package for Polis.ua API",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "maksa988",
+      "email": "maksa988ua@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.4",
+    "guzzlehttp/guzzle": "~6.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Maksa988\\PolisAPI\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Maksa988\\PolisAPI\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
