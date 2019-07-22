@@ -7,7 +7,7 @@ class CompanyLogoRequest extends Request
     /**
      * @var string
      */
-    protected $url = '/api/resources/company/logo/';
+    protected $url = 'service/resources/company/logo/';
 
     /**
      * AutoInfoRequest constructor.
