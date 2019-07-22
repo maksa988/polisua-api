@@ -88,7 +88,7 @@ class PolisAPI
             $this->throwError($e);
         }
 
-        if($request->isFile()) {
+        if(! $request->isFile()) {
             return $this->decodeResponse($response);
         }
 

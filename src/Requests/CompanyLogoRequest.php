@@ -7,7 +7,12 @@ class CompanyLogoRequest extends Request
     /**
      * @var string
      */
-    protected $url = 'service/resources/company/logo/';
+    protected $url = '/resources/company/logo/';
+
+    /**
+     * @var bool
+     */
+    protected $isFile = true;
 
     /**
      * AutoInfoRequest constructor.
@@ -19,5 +24,20 @@ class CompanyLogoRequest extends Request
         parent::__construct();
 
         $this->setUrl($this->url . $company);
+    }
+
+    /**
+     * @return array
+     */
+    public function getHeaders()
+    {
+        $headers = parent::getHeaders();
+
+        $headers = [
+            'locale' => 'uk_UA',
+            'Content-Type' => 'image/png'
+        ];
+
+        return $headers;
     }
 }
