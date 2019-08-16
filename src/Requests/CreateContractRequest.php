@@ -131,6 +131,10 @@ class CreateContractRequest extends Request
      * @var string
      */
     protected $insurantDocumentSeries;
+    /**
+     * @var string
+     */
+    protected $insurantDocumentNumber;
 
     /**
      * @var string
@@ -235,9 +239,9 @@ class CreateContractRequest extends Request
                                 $vehicleModelYear, $vehicleVin, $vehicleRegistration, $insurantClientId, $insurantPhone,
                                 $insurantInnEgrpou, $insurantSurnameOrgName, $insurantName, $insurantPatronymic,
                                 \DateTime $insurantBirthDate, $insurantAddress, $insurantEmail, $insurantDocumentType,
-                                $insurantDocumentSeries, $insurantDocumentIssueDate, $insurantDocumentIssued, $deliveryType,
-                                $deliveryAddress, $deliveryAddressId, $deliveryPhone, $deliveryNote, $deliveryCost,
-                                $cashOnDelivery, $polisType, $otp)
+                                $insurantDocumentSeries, $insurantDocumentNumber, $insurantDocumentIssueDate,
+                                $insurantDocumentIssued, $deliveryType, $deliveryAddress, $deliveryAddressId,
+                                $deliveryPhone, $deliveryNote, $deliveryCost, $cashOnDelivery, $polisType, $otp)
     {
         parent::__construct();
 
@@ -264,6 +268,7 @@ class CreateContractRequest extends Request
         $this->insurantEmail = $insurantEmail;
         $this->insurantDocumentType = $insurantDocumentType;
         $this->insurantDocumentSeries = $insurantDocumentSeries;
+        $this->insurantDocumentNumber = $insurantDocumentNumber;
         $this->insurantDocumentIssueDate = $insurantDocumentIssueDate;
         $this->insurantDocumentIssued = $insurantDocumentIssued;
         $this->deliveryType = $deliveryType;
@@ -306,6 +311,7 @@ class CreateContractRequest extends Request
             'insurantEmail' => $this->insurantEmail,
             'insurantDocumentType' => $this->insurantDocumentType,
             'insurantDocumentSeries' => $this->insurantDocumentSeries,
+            'insurantDocumentNumber' => $this->insurantDocumentNumber,
             'insurantDocumentIssueDate' => $this->insurantDocumentIssueDate,
             'insurantDocumentIssued' => $this->insurantDocumentIssued,
             'deliveryType' => $this->deliveryType,
