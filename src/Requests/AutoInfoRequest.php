@@ -7,7 +7,7 @@ class AutoInfoRequest extends Request
     /**
      * @var string
      */
-    protected $url = '/api/osgpo/auto-info/find/';
+    protected $url = '/api/osgpo/auto-info/find/v2/';
 
     /**
      * AutoInfoRequest constructor.
