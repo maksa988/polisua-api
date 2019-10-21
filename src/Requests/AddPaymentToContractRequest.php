@@ -57,7 +57,7 @@ class AddPaymentToContractRequest extends Request
     public function getData()
     {
         return array_merge(parent::getData(), [
-            'dateTime' => $this->data_dateTime->format('Y-m-d'),
+            'dateTime' => $this->data_dateTime->format('Y-m-d\TH:i:s'),
             'reference' => $this->data_reference,
             'purpose' => $this->data_purpose,
             'sum' => $this->data_sum,
