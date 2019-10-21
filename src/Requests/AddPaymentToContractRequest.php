@@ -43,6 +43,7 @@ class AddPaymentToContractRequest extends Request
         parent::__construct();
 
         $this->setUrl(str_replace('{contract}', $contract, $this->url));
+        $this->setMethod('POST');
 
         $this->data_dateTime = $dateTime;
         $this->data_reference = $reference;
