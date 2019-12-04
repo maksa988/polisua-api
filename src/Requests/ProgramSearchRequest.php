@@ -20,6 +20,11 @@ class ProgramSearchRequest extends Request
     /**
      * @var string
      */
+    protected $agentId;
+
+    /**
+     * @var string
+     */
     protected $carType;
 
     /**
@@ -117,13 +122,14 @@ class ProgramSearchRequest extends Request
      * @param int $carCount
      * @param array $usingMonths
      */
-    public function __construct($carType, $carRegZone, $cityId, $franchiseFrom, $franchiseTo,
+    public function __construct($agentId, $carType, $carRegZone, $cityId, $franchiseFrom, $franchiseTo,
                                 \DateTime $otkNextDate = null, $privilegeType = 0, $engineSize = EngineSize::LESS_2500,
                                 $taxi = false, $notPassOTK = false, $clientType = Client::FL, $fraud = false,
                                 $expirance3Years = true, $contractMonthes = 12, $carCount = null, $usingMonths = [])
     {
         parent::__construct();
 
+        $this->agentId = $agentId;
         $this->carType = $carType;
         $this->carRegZone = $carRegZone;
         $this->cityId = $cityId;
@@ -148,6 +154,7 @@ class ProgramSearchRequest extends Request
     public function getData()
     {
         return array_merge(parent::getData(), [
+            'agentId' => $this->agentId,
             'carType' => $this->carType,
             'carRegZone' => $this->carRegZone,
             'cityId' => $this->cityId,
