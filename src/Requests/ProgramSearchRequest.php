@@ -105,15 +105,16 @@ class ProgramSearchRequest extends Request
     /**
      * AutoInfoRequest constructor.
      *
-     * @param $carType
-     * @param $carRegZone
-     * @param $cityId
+     * @param string $agentId
+     * @param int $carType
+     * @param int $carRegZone
+     * @param int $cityId
+     * @param int $franchiseFrom
+     * @param int $franchiseTo
+     * @param \DateTime $otkNextDate
      * @param int $privilegeType
      * @param string $engineSize
      * @param bool $taxi
-     * @param $franchiseFrom
-     * @param $franchiseTo
-     * @param \DateTime $otkNextDate
      * @param bool $notPassOTK
      * @param string $clientType
      * @param bool $fraud
