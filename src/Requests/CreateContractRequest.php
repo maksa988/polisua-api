@@ -197,6 +197,27 @@ class CreateContractRequest extends Request
     protected $otp;
 
     /**
+     * @var string
+     */
+    protected $dgoCode;
+
+    /**
+     * @var string
+     */
+    protected $dgoTarif;
+
+    /**
+     * @var string
+     */
+    protected $dgoInsurSum;
+
+    /**
+     * @var integer
+     */
+    protected $dgoPaySum;
+
+
+    /**
      * AutoInfoRequest constructor.
      *
      * @param $calculator
@@ -233,6 +254,10 @@ class CreateContractRequest extends Request
      * @param $cashOnDelivery
      * @param $polisType
      * @param $otp
+     * @param $dgoCode
+     * @param $dgoTarif
+     * @param $dgoInsurSum
+     * @param $dgoPaySum
      */
     public function __construct($calculator, $paySum, $programId, \DateTime $dateFrom, $agentId,
                                 $vehicleBrand, $vehicleBrandName, $vehicleModel, $vehicleModelName,
@@ -241,7 +266,7 @@ class CreateContractRequest extends Request
                                 \DateTime $insurantBirthDate, $insurantAddress, $insurantEmail, $insurantDocumentType,
                                 $insurantDocumentSeries, $insurantDocumentNumber, $insurantDocumentIssueDate,
                                 $insurantDocumentIssued, $deliveryType, $deliveryAddress, $deliveryAddressId,
-                                $deliveryPhone, $deliveryNote, $deliveryCost, $cashOnDelivery, $polisType, $otp)
+                                $deliveryPhone, $deliveryNote, $deliveryCost, $cashOnDelivery, $polisType, $otp, $dgoCode, $dgoTarif, $dgoInsurSum, $dgoPaySum)
     {
         parent::__construct();
 
@@ -280,6 +305,10 @@ class CreateContractRequest extends Request
         $this->cashOnDelivery = $cashOnDelivery;
         $this->polisType = $polisType;
         $this->otp = $otp;
+        $this->dgoCode = $dgoCode;
+        $this->dgoTarif = $dgoTarif;
+        $this->dgoInsurSum = $dgoInsurSum;
+        $this->dgoPaySum = $dgoPaySum;
     }
 
     /**
@@ -323,6 +352,10 @@ class CreateContractRequest extends Request
             'cashOnDelivery' => $this->cashOnDelivery,
             'polisType' => $this->polisType,
             'otp' => $this->otp,
+            'dgoCode' => $this->dgoCode,
+            'dgoTarif' => $this->dgoTarif,
+            'dgoInsurSum' => $this->dgoInsurSum,
+            'dgoPaySum' => $this->dgoPaySum
         ]);
     }
 }
